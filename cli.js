@@ -6,18 +6,18 @@ var reddid = require('./');
 var cli = meow({
   help: [
     'Usage',
-    '  reddid <subreddit> <category> <num> [time]',
+    '  reddid <subreddit> <category> <num> [keyword]',
     '  reddid pics top 3 week',
     '  reddid pics hot 5',
     ' ',
-    ' [time] is an optional parameter that can be passed when category is "top"',
-    ' Valid values: "year", "month", "week", "day", "hour"'
+    ' [keyword] is an optional parameter that can be',
+    ' It will change the call to a search call'
   ]
 });
 
-const times = ['year', 'month', 'week', 'day', 'hour']
-let [sub, cat, num, time] = cli.input
+// const times = ['year', 'month', 'week', 'day', 'hour']
+let [sub, cat, num, key] = cli.input
 
-time = times.includes(time) ? time : null
+// time = times.includes(time) ? time : null
 
-reddid({sub, cat, num, time});
+reddid({sub, cat, num, key});

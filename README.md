@@ -1,5 +1,7 @@
 ![Reddid Alien](reddid.png)
 
+**Note All information below has not been changed from the original version. However this version is currently meant to only be used by calling node cli.js**
+
 reddid
 ====
 

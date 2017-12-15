@@ -8,25 +8,34 @@ const chalk = require('chalk')
 const trunc = require('unicode-byte-truncate')
 const sanitize = require('sanitize-filename')
 
+var numDownloaded = 0;
+var globalNum;
+var afterValue;
+
 const defaultOptions = {
   sub: 'pics',
   cat: 'hot',
   num: '3',
-  time: null
+  key: null
 }
 
 /*
  * Exports module to be called by cli.js, which is our executable
  */
 module.exports = (options) => {
-  const {sub, cat, num, time} = Object.assign(defaultOptions, options)
+  const {sub, cat, num, key} = Object.assign(defaultOptions, options)
   let url = [
     'http://www.reddit.com/r/',
-    sub, '/', cat, '.json', '?limit=', num
+    sub, '/', (key !== null ? 'search' : cat), '.json', '?limit=', num
   ].join('')
 
-  if (cat === 'top' && time !== null)
-    url += '&t=' + time
+  globalNum = num;
+
+  if(key !== null) {
+    url += '&q=' + key + '&restrict_sr=on&sort=' + cat + '&t=all&after=';
+  }
+
+  console.log(url);
 
   getPosts(url, getImage)
 }
@@ -44,6 +53,14 @@ function getPosts (url) {
         parsed.data.children.map(link => callback => getImage(link, callback)),
         (err, results) => {
           if (err) return console.log(err)
+
+          // Continue searching until all requested images found
+          if(numDownloaded < globalNum) {
+            url = replaceUrlParam(url, 'after', afterValue);
+
+            getPosts(url, getImage)
+          }
+
           console.log('All downloads complete')
           console.log(`Downloaded ${results.filter(res => res).length} out of ${results.length} links`)
         })
@@ -62,9 +79,18 @@ function getImage (post, callback) {
     return callback(null, null)
   }
   const url = post.data.preview.images[0].source.url
+
+  // Set after value for queries > 100
+  afterValue = post.data.name;
+
   // truncate to 251 so we have 4 bytes for the file extension
   const filename = trunc(sanitize(post.data.title, {replacement: '_'}), 251)
-  const redditImageRegex = /https?:\/\/i\.redditmedia\.com\/.*\.(jpg|png|gif)/
+  
+  // Uncomment to allow gifs to be searched
+  // const redditImageRegex = /https?:\/\/i\.redditmedia\.com\/.*\.(jpg|png|gif)/
+
+  // Only desire still images no gifs
+  const redditImageRegex = /https?:\/\/i\.redditmedia\.com\/.*\.(jpg|png)/
 
   if (url.match(redditImageRegex)) {
     const match = url.match(redditImageRegex)
@@ -76,11 +102,28 @@ function getImage (post, callback) {
   }
 }
 
+// Modified to save directly to an images folder. This should not be used as a global npm
 function downloadImage (url, filename, callback) {
   request(url)
-  .pipe(fs.createWriteStream(filename))
+  .pipe(fs.createWriteStream('./images/' + filename))
   .on('close', () => {
     console.log(url, chalk.green(' downloaded successfully'))
+
+    // Increase numDownloaded to keep track of how many images have been downloaded
+    numDownloaded++;
+
     callback(null, filename)
   })
+}
+
+// Found from https://stackoverflow.com/questions/7171099/how-to-replace-url-parameter-with-javascript-jquery
+function replaceUrlParam(url, paramName, paramValue) {
+  if (paramValue == null)
+    paramValue = '';
+  var pattern = new RegExp('\\b(' + paramName + '=).*?(&|$)')
+  if (url.search(pattern) >= 0) {
+    return url.replace(pattern, '$1' + paramValue + '$2');
+  }
+  url = url.replace(/\?$/, '');
+  return url + (url.indexOf('?') > 0 ? '&' : '?') + paramName + '=' + paramValue
 }
