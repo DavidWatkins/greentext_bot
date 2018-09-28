@@ -1,0 +1,26 @@
+>Have ordered a 12$ bluetooth joystick
+from amazon some days earlier tstill hasn't
+arrived yeti
+>Try to pair my other shitty bluetooth
+joystick
+>lt doesn't work
+>"lmpossible, some months ago I've tried it
+and it worked perfectly fine."
+>Boot to desktop
+>Go to bluetooth
+>No bluetooth adapter found
+>Lookup google for troubleshooting
+>Come across a post
+>"Did I fucking fry the bluetooth chip? I'm
+so deadl"
+>l bought my Raspberry Pi 0 w with a kit.
+so spent 35s and didn't want to waste
+money to buy a new one
+>Spend hours trying to fix this problem
+while praying
+>Let's check bluetooth
+>it works
+>lT FUCKING WORKS
+>Thank god
+Tell me your proudest moments when you
+finally fixed something, lgl

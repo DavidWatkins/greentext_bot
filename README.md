@@ -1,11 +1,9 @@
-![Reddid Alien](reddid.png)
+![Greentext Bot](greentext_bot.jpg)
 
-**Note All information below has not been changed from the original version. However this version is currently meant to only be used by calling node cli.js**
-
-reddid
+r/greentext bot
 ====
 
-> Reddit Image Downloader  
+> Greentext Bot 
 
 **reddid** is a simple command-line app written in Node.js that lets you download images from image-based subreddits on [Reddit](http://reddit.com), using their [API](https://www.reddit.com/dev/api).
 
@@ -14,7 +12,7 @@ Looking to add support for more providers.
 
 ![Reddid in action](http://i.imgur.com/72gcPVW.gif)
 
-Install
+Setup
 ----
 ```
 $ npm install -g reddid

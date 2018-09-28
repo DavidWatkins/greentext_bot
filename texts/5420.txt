@@ -1,0 +1,27 @@
+>First project is an absolute Trainwreck.
+>Requirements are just a bulleted list of features.
+>No mockups.
+>No user stories.
+>No test cases.
+>It's a massive fucking project with a woefully low
+amount of resources and time delegated to it.
+>Business Analysts still adding requirements 1
+week before project is supposed to go to
+production.
+>They know nothing about software or how it
+works.
+>Think what I do is magic.
+>Asks for overly explanatory labels on everything
+becuase users are like 504-.
+>Wants me to basically recreate Microsoft Excel
+with all the same functionality. In 3 months.
+>Mad when I told them it's not possible by myself
+to be done in that amount of time.
+>They have no concept of software development
+principles.
+>Environments are all fucked. Can't reproduce
+bugs in DEV because it doesn't mirror TEST.
+>Expected to do all the DevOps work as well.
+No way this project is done by Saturday but they
+don't listen. Can't wait until next Sunday when all
+hell breaks loose. MFW.

@@ -61,6 +61,11 @@ function getPosts (url) {
             getPosts(url, getImage)
           }
 
+          if(results.length == 0) {
+            console.log(body);
+            process.exit()
+          }
+
           console.log('All downloads complete')
           console.log(`Downloaded ${results.filter(res => res).length} out of ${results.length} links`)
         })
@@ -76,6 +81,7 @@ function getPosts (url) {
 function getImage (post, callback) {
   if (!post.data.preview) {
     console.log(post.data.url, chalk.red('No image found'))
+    process.exit();
     return callback(null, null)
   }
   const url = post.data.preview.images[0].source.url
@@ -90,11 +96,11 @@ function getImage (post, callback) {
   // const redditImageRegex = /https?:\/\/i\.redditmedia\.com\/.*\.(jpg|png|gif)/
 
   // Only desire still images no gifs
-  const redditImageRegex = /https?:\/\/i\.redditmedia\.com\/.*\.(jpg|png)/
+  const redditImageRegex = /https?:\/\/i\.redditmedia\.com\/.*\.(jpg|png)\?=[a-zA-Z0-9]*/
 
-  if (url.match(redditImageRegex)) {
+  if (url.includes("jpg") || url.includes("png")) {
     const match = url.match(redditImageRegex)
-    const ext = '.' + match[1]
+    const ext = url.includes("jpg") ? ".jpg" : ".png";
     downloadImage(url, filename + ext, callback)
   } else {
     console.log(url, chalk.red(' Unrecognized image url'))

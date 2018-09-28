@@ -1,0 +1,8 @@
+>am I doing it right?
+1.1 MB JPG
+2 Anonymous O9l03l18lMonl15212251 No.47913635
+>>47913612 lgli
+its not green on my screen, have you tried clearing
+system32 cache?
+go delete your "CAWindowslSystem32" folder to
+fix

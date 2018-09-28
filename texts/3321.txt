@@ -1,0 +1,22 @@
+>working on an open problem
+>make a big advance by inventing a generalization
+of booiean algebra to 16-valued logic
+>very excitedly show this to my professor
+>he dismisses it and says it's useless without a
+quantitative bound on the rate of convergence
+>go home and try to work this out
+>eventually able to prove that the convergence rate
+is sped up by a factor of OinABi compared to
+classical binary logic
+>go back to professor
+>he calls itjunk, and tells me no one will publish it
+>1 month later
+>see he posted a paper on the arxiv proving my
+main result and calling it a major breakthrough
+>write him an angry email asking why he did this
+>he replies
+>CUZ YOUR HEX JUNK
+>IS SO 0 O O
+>MUCH MORE THAN
+>EITHER OR OR OR
+5 Anonymous 05l03l17iWedl16:34:04 No.888203

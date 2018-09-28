@@ -1,0 +1,7 @@
+>make bng story
+>click post
+' 7 . , >get message "Posting from your ISP has been blocked due to abusf
+' >didn't copy story
+, ' g >rnM
+' ,   I
+, V

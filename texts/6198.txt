@@ -1,0 +1,41 @@
+>downloading movie on torrents
+>gets to 94.6 96 and stops
+>leave it overnight
+>next day 98.290
+>wait another day. finally at 10096
+>rub hands together, Tinally time to watch this movie"
+>navigate to folder
+>230 .rars
+>open first one
+>archive is corrupted
+>90 to mininova comments to rage
+>see someone suggest using winrar recovery
+>winrar recovery takes an hour
+>open first rar again
+>see that the archive contains a 4.268 ISO file
+>no idea what an iso file is, extract anyway
+>Fat32 formatted hard drives cannot support files
+larger than 4GB
+>download a linux distro
+>boot into linux and resize hard drive partitions
+>make a new 4368 NTFS partition
+>boot back into windows
+>open first rar
+>extract
+>sorry, not enough space on the drive
+>check new partition capacity
+>ltis only 3968
+>4OOMB disappeared into nowhere
+>learn that formatting a drive takes up raw space with a
+file allocation table
+>boot back into linix, delete partition, resize other
+partition, make new 10GB ntfs partition
+>boot back into windows
+>open first rar
+>extract
+>no idea how to play .iso file
+>flnd you can open it with 7zip
+>extract the .vobs
+>open vob file with media player
+>it's not the movie l wanted and it's in a foreign
+language with hard coded Swedish subtitles

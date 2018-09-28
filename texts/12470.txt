@@ -1,0 +1,11 @@
+>>45113988lOPl
+>lecturer doing some intro to IT be
+>writes a for loop summing numbers from 1 to 5
+>asks class what the result will be
+>l say 500
+>class laughs
+>someone says 15
+>he runs it
+>500 server error
+>he had a missing semicolon
+9 2
