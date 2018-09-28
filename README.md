@@ -21,7 +21,7 @@ $ npm install -g reddid
 Usage
 ----
 ```
-$ reddid <subreddit> <category> <num>
+$ TF_CPP_MIN_LOG_LEVEL=2 python3 train_greentext_model.py
 ```  
 
 Default arguments:
